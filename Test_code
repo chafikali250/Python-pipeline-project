@@ -1,0 +1,10 @@
+def run_pipeline(data: list) -> list:
+    """Nettoie et transforme les données."""
+    if not data:
+        raise ValueError("Les données d'entrée ne peuvent pas être vides.")
+    return [item.strip().lower() for item in data if isinstance(item, str)]
+
+if __name__ == "__main__":
+    raw_data = ["  Data_1 ", "  Data_2  ", "Data_3"]
+    result = run_pipeline(raw_data)
+    print(f"Résultat du pipeline : {result}")
